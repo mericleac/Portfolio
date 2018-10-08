@@ -1,0 +1,52 @@
+<div class="projects container">
+    <h2>Full Stack Web Applications</h2>
+    <div class="buttons">
+        <button class="btn btn-primary" (click)="filterProjects('all')">All Projects</button>
+        <button class="btn btn-primary" (click)="filterProjects('python')">Python</button>
+        <button class="btn btn-primary" (click)="filterProjects('MEAN')">MEAN</button>
+        <button class="btn btn-primary" (click)="filterProjects('cSharp')">C#.Net</button>
+    </div>
+    <div *ngFor="let project of showProjects" class="card">
+        <img class="card-img-top" src="{{ project.imageUrl }}" alt="Card image cap" (click)="selectProject(project)">
+        <div class="card-body">
+            <h5 class="card-title" (click)="selectProject(project)">{{ project.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ project.tech }}</h6>
+            <p class="card-text">{{ project.summary }}</p>
+            <a href="{{ project.url }}" class="card-link">Click here to see this project deployed</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Mini-projects</h2>
+    <iframe height='400' scrolling='no' title='JS Clock' src='//codepen.io/mericleac/embed/WgqXBX/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mericleac/pen/WgqXBX/'>JS Clock</a> by Mandy Mericle (<a href='https://codepen.io/mericleac'>@mericleac</a>) on <a href='https://codepen.io'>CodePen</a>.
+    </iframe>
+    <iframe height='400' scrolling='no' title='Train Tracker SVG Animation' src='//codepen.io/mericleac/embed/GYrKYx/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mericleac/pen/WgqXBX/'>JS Clock</a> by Mandy Mericle (<a href='https://codepen.io/mericleac'>@mericleac</a>) on <a href='https://codepen.io'>CodePen</a>.
+    </iframe>
+</div>
+
+<!-- Project Modal, Hidden by default -->
+<div id="overlay" *ngIf="selectedProject != null">
+    <div id="modal-container">
+        <img class="remove" (click)="removeModal()" src="../../assets/img/cross-remove-sign.png">
+        <h2>{{ selectedProject.title }}</h2>
+        <h4>{{ selectedProject.tech }}</h4>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div *ngFor="let image of selectedProject.images" [ngClass]="{'active': image.id == 0}" class="carousel-item">
+                        <img class="d-block w-100" src="{{ image.url }}" alt="First slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <p>{{ selectedProject.summary }}</p>
+        <p><a href="{{ selectedProject.url }}">Click here to see this project deployed.</a></p>
+    </div>
+</div>

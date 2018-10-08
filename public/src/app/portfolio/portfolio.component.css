@@ -1,0 +1,129 @@
+.card {
+    width: 20rem;
+    height: 65vh;
+    overflow: auto;
+    display: inline-block;
+    margin: 2rem;
+    color: black;
+    vertical-align: top;
+    animation: slide-up 0.6s ease;
+}
+
+.card::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+.card::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.card::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+h2 {
+    margin: 2% auto;
+    font-size: 2.3rem;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1%;
+    width: 10%;
+}
+
+.buttons {
+    width: 100%;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+#modal-container {
+    position:  fixed;
+    top: 5%;
+    left: 20%;
+    width: 60%;
+    height: 90vh;
+    padding: 1% 3%;
+    background: white;
+    text-align: center;
+    box-shadow: 0px 0px 2px 1px black;
+    z-index: 100;
+    overflow: auto;
+}
+
+#modal-container h2, p {
+    color: black;
+}
+
+#modal-container h4 {
+    color: #727272;
+}
+
+#overlay {
+    position: absolute;
+    top: 0px;
+    left:  0px;
+    z-index:  99;
+    background:  rgba(0,0,0,0.8);
+    width:  100%;
+    height: 100%;
+}
+
+.remove {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.remove:hover {
+    cursor: pointer;
+}
+
+#carouselExampleControls {
+    margin: 4% auto;
+    width: 90%;
+}
+
+#modal-container::-webkit-scrollbar {
+    width: 0.75em;
+}
+ 
+#modal-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+#modal-container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+iframe {
+    margin: 3% auto;
+}

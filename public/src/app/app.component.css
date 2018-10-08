@@ -1,0 +1,146 @@
+#page {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 17vh;
+}
+
+.navbar {
+    background-color: #2b2e3e;
+    border-bottom: aquamarine 3px solid;
+}
+
+.navbar a {
+    color: whitesmoke;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #2b2e3e;
+    color: white;
+    height: 17vh;
+    padding: 3vh;
+}
+
+.cr {
+    color: aquamarine;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    background-color: #717180;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 5px;
+    padding: 4px;
+}
+
+.linkedin {
+    background-image: url("../assets/img/linkedin.png");
+}
+
+.github {
+    background-image: url("../assets/img/github.png");
+}
+
+.codepen {
+    background-image: url("../assets/img/codepen.png");
+}
+
+.hvr-underline-from-left .active {
+    border-bottom: #77ebc6 2px solid;
+}
+
+.hvr-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #77ebc6;
+    height: 2px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+    right: 0;
+}
+
+/* Icon Drop */
+@-webkit-keyframes hvr-icon-drop {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+    51%,
+      100% {
+      opacity: 1;
+    }
+  }
+  @keyframes hvr-icon-drop {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+    51%,
+      100% {
+      opacity: 1;
+    }
+  }
+  /* Icon Drop */
+  .hvr-icon-drop {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-icon-drop .hvr-icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .hvr-icon-drop:hover .hvr-icon, .hvr-icon-drop:focus .hvr-icon, .hvr-icon-drop:active .hvr-icon {
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-animation-name: hvr-icon-drop;
+    animation-name: hvr-icon-drop;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    animation-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
