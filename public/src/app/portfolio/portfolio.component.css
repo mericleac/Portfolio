@@ -24,6 +24,15 @@
   border-radius: 10px;
 }
 
+.card-img-top:hover {
+    cursor: pointer;
+}
+
+.card-title:hover {
+    color: darkgray;
+    cursor: pointer;
+}
+
 h2 {
     margin: 2% auto;
     font-size: 2.3rem;

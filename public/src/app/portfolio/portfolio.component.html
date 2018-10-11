@@ -12,7 +12,8 @@
             <h5 class="card-title" (click)="selectProject(project)">{{ project.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ project.tech }}</h6>
             <p class="card-text">{{ project.summary }}</p>
-            <a href="{{ project.url }}" class="card-link">Click here to see this project deployed</a>
+            <a *ngIf="project.url.length != 0" href="{{ project.url }}" class="card-link">Click here to see this project deployed</a>
+            <p *ngIf="project.url.length == 0">This project is not currently deployed</p>
         </div>
     </div>
 </div>
@@ -47,6 +48,7 @@
             </a>
         </div>
         <p>{{ selectedProject.summary }}</p>
-        <p><a href="{{ selectedProject.url }}">Click here to see this project deployed.</a></p>
+        <p><a *ngIf="selectedProject.url.length != 0" href="{{ selectedProject.url }}">Click here to see this project deployed</a></p>
+        <p *ngIf="selectedProject.url.length == 0">This project is not currently deployed</p>
     </div>
 </div>
